@@ -15,20 +15,24 @@
 
 
 	//Assigns the database details to variables which will be used in the statement to connect to the database
-	$dbHost= "localhost";
-	$dbUsername="root";
-	$dbPassword="";
-	$dbName="groupproject";
+
+	function db(){
+		static $con;
+		$dbHost= "localhost";
+		$dbUsername="root";
+		$dbPassword="";
+		$dbName="groupproject";
 
 
-	//Statement connecting the site to the database using variables previously defined.
-	$con=mysqli_connect("$dbHost", "$dbUsername", "$dbPassword", "$dbName");
+		//Statement connecting the site to the database using variables previously defined.
+		$con = mysqli_connect("$dbHost", "$dbUsername", "$dbPassword", "$dbName");
 
-	//check connection
-	if(mysqli_connect_errno()){
-		echo "Failed to connect to MySQL: ".mysqli_connect_error();
-	}else{
-		echo "Site is connected to database";
+		//check connection
+		if(mysqli_connect_errno()){
+			echo "Failed to connect to MySQL: ".mysqli_connect_error();
+
+		}
+		return $con;	
 	}
 
 ?>

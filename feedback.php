@@ -5,18 +5,18 @@
 <title>FeedBack</title>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 <?PHP
-require_once("./include/fgcontactform.php");
-$formproc = new FGContactForm();
-//1. Add your email address here.
-8
-//You can add more than one recipients.
-9
-$formproc->AddRecipient('b00330306@studentmail.uws.ac.uk'); //<<---Put your //email address here
+// require_once("./include/fgcontactform.php");
+// $formproc = new FGContactForm();
+// //1. Add your email address here.
+// 8
+// //You can add more than one recipients.
+// 9;
+// $formproc->AddRecipient('b00330306@studentmail.uws.ac.uk'); //<<---Put your //email address here
 
-//2. For better security. Get a random string from
-// this link: http://tinyurl.com/randstr
-// and put it here
-$formproc->SetFormRandomKey('gkEFthfv6gvGAuL');
+// //2. For better security. Get a random string from
+// // this link: http://tinyurl.com/randstr
+// // and put it here
+// $formproc->SetFormRandomKey('gkEFthfv6gvGAuL');
 
 ?>
 

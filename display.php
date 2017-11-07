@@ -1,6 +1,6 @@
 <?php
 
-
+$con = db();
 
 
 /***
@@ -13,15 +13,15 @@
 
 
 	
-
+	
 
 	$sql_search = "SELECT gamelist.gameName AS 'Name', gamelist.gameDesc AS 'Description', gamegenre.genreName AS 'Genre', console.consoleName AS 'Console' FROM gamelist LEFT JOIN gamegenre ON gamelist.genreID=gamegenre.genreID LEFT JOIN console ON gamelist.consoleID=console.consoleID";
 
 
 	
 	//This IF statement will display either the full list of games, or the user inputed search.
-	if (isset($con, $_GET["searchInput"])){
-		$userSearch=trim(mysqli_real_escape_string($con, $_GET["searchInput"]));
+	if (isset($con, $_GET["search"])){
+		$userSearch=trim(mysqli_real_escape_string($con, $_GET["search"]));
 		$sql_search = $sql_search." WHERE gamelist.gameName LIKE '%".$userSearch."%' OR console.consoleName LIKE '%".$userSearch."%' OR gamegenre.genreName LIKE '%".$userSearch."%'";
 		
 	}	

@@ -1,58 +1,48 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+    <title>Login</title>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+</head>
+    <body>
+	<div data-role="page" id="home">
+<div data-role="header" id="header">
+<p>Login</p>
+</div>
 <?php
-
-function login(){
-
-	/***
-
-	The two variables, $email and $password, collect the user entered log in information on the previous page. 
-
-	The  "email" and "password" should be changed to fill what is used on the previous page
-	***/
-
-	$email = mysqli_real_escape_string($con, $_POST["email"]);
-	$password = mysqli_real_escape_string($con, $_POST["password"]);
-
-
-
-	$login = "SELECT email AS 'Email', password AS 'Password', admin AS 'Admin' FROM users WHERE email ='".$email."' AND password = '".$password."'";
-
-
-	$result = $con->query($login);
-	$admin_check = $result->fetch_assoc();
-
-
-
-	/***
-
-	The following IF statement decides if the log in information is the information for a valid user and the type of user that they are.
-
-	The first IF statement will run when the log in is a valid log in, and within is a nested statement to send the user either to the general users page or to the admin page.
-
-	If the log in is not a valid user a message will be displayed to the user that the log in information is incorrect.
-
-	***/
-
-	if ($result->num_rows > 0){
-
-		echo "<br>valid log in";
-		if($admin_check['Admin'] == 1){
-			echo "<br>This is an admin";
-		}else{
-			echo "<br>This is a general user";
-		}
-		
-	} 
-	else{
-		echo "<br>invalid login";
-	}
-}
-
-function logout(){
-
-
-
-}
-
-
+require 'dbconx.php';
 ?>
+<div data-role="content" id="content">
+ <form id='login' action="user.php" method="POST">  
+    
+    <fieldset>      
+      <legend>Login</legend>
 
+        <lable for="username">Username:</lable> <br>   
+        <input type="text" name="username" id="username" maxlength="50" required/>
+<br>
+        <lable for="password">Password:</lable><br>
+        <input type="password" name="password" id="password" maxlength="50" required/>
+<br>
+        <input type ="submit" name="login" value="login"/>
+        <p class="message">Not registered? <a href="newuser.php">Create an account</a></p>
+    </fieldset>
+    </form>
+	</div>
+	<!-- Chris has added in the button links -->
+	<div data-role="footer" id="footer">
+	<script src="redirect.js"></script>
+<button id="btnFeeds">Feeds</button>
+<button id="btnFeedback">FeedBack</button>
+<button id="btnLogin" >Log In</button>
+     </div>
+</div>
+ 
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</HTML>
