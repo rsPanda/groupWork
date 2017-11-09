@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game Hub</title>
+		  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Include the CSS file-->
+  <link rel="stylesheet" href="css/adminStyle.css" type="text/css">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!--Include the Bootstrap stylesheets-->	
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+  <!--Icon Pack-->
+  	<link rel="stylesheet"  href="dist/jqm-icon-pack-fa.css" />
+
+
+  <!-- Include the jQuery library -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!--Include the bootstrap JS library-->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+</head>
+<body>
+	<div data-role="pages" id="container">
+		<!--Header-->
+		<div data-role="header" id="header">	    
+<!-- 			<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline">Back</a>
+ -->			GAME HUB
+			  <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+			     <a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-icon-user ui-btn-icon-notext ui-btn-inline ui-corner-all">My Profile</a>
+			     <div data-role="popup" id="popupMenu">
+			        <ul data-role="listview" data-inset="true">
+			            <li><a href="#">My Profile</a></li>
+						<li><a href="#">Logout</a></li>
+			        </ul>
+				</div>
+<!-- 			      <a href="#" data-role="button" data-icon="home" data-iconpos="notext">Home</a>
+ -->			  </div>
+
+
+		</div>
+	
+		<div data-role="main" class="ui-content">
+			<!--Top Header Menu-->
+			<div>
+			    <span><input type="search" name="search-2" id="search-2" value="" /></span>
+			</div>
+			
+
+			<!--main body-->
+			<div>
+				<ul data-role="listview" data-inset="true" data-count-theme="b">
+					<li><a href="#">New Users<span class="ui-li-count">5</span></a></li>
+					<li><a href="#">Favorited<span class="ui-li-count">5</span></a></li>
+					<li><a href="#">Feedbacks<span class="ui-li-count">10</span></a></li>
+				</ul>
+			</div>
+			
+		</div>
+
+		<div data-role="footer" id="footer">
+			<!-- Copyright <i class="fa fa-copyright" aria-hidden="true"></i>  2017 -->
+			<div data-role="navbar" data-grid="d"  data-position="fixed">
+			<ul>
+				<li><a href="posts.html" id="post" data-icon="file">Posts &amp; Games</a></li>
+				<li><a href="genre.html" rel="external" id="mail2" data-icon="rocket">Genre</a></li>
+				<li><a href="console.html" rel="external" id="mail2" data-icon="gamepad">Console</a></li>
+
+				<li><a href="admins.html" id="arrow-up" data-icon="user">Admins</a></li>
+				<li><a href="feedback.html" id="arrow-up" data-icon="comment">Feedback</a></li>
+
+			</ul>
+		</div>
+		</div>
+
+	</div>
+</body>
+</html>
