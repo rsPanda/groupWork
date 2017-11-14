@@ -6,81 +6,80 @@
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="redirect.js">
-</script>
-<script>
-<?php 
-if(isset($_POST['username'], $_POST['password'], $_POST['name'], $_POST['email'])) {
-     
-    include 'dbconx.php';
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
-    
-    $password = hash('sha512', $password);
-    
-    
-    if ($stmt = $con -> prepare("INSERT INTO details (username, password, name, email) VALUES
-    (?,?,?,?)")) {
-        $stmt -> bind_param ('ssss', $username, $password, $name, $email);
-        
-        if (!$stmt-> execute()) {
-            echo "please resgiter with valid details";
-        }  else {
-            echo "well done you have signed up, please go back to the <a href='login.php'> login page</a>";            
-            
-        }
-                    
-        }
-}
-   
-    
-?>
-</script>
-    
-    <body>
-      
-       <div class="form">  
-	   <div data-role="page" id="home">
-	   <div data-role="header" role="banner">
-		  <p>Create Account</p>
-	   </div>
-
-<div data-role="main" id="content">
-<form id="register" action='reg.php' method="post"
-    accept-charset='UTF-8'>
-    
-<fieldset >
-    <legend>Register</legend>
-    <input type='hidden' name='submitted' id='submitted' value='1'/>
-
-    <label for='name' >Your Full Name: </label>  <br>  
-    <input type='text' name='name' id='name' maxlength="50" required/>
-<br>
-    <label for='email' >Email Address:</label><br>
-    <input type='text' name='email' id='email' maxlength="50" required />
-<br>
-    <label for='username' >UserName:</label><br>
-    <input type='text' name='username' id='username' maxlength="50" required />
-<br>
-    <label for='password' >Password:</label><br>
-    <input type='password' name='password' id='password' maxlength="50" required />
-<br> <br>
-    <input type='submit' name='register' value='Register'/>
-    <p class="message">Already registered? <a id="log">Login here.</a></p>
-
-</fieldset>
-</form>
-	</div>
-	<!-- Chris has added in the button links -->
-	<div data-role="footer" id="footer">
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
 	<script src="redirect.js"></script>
-<button id="btnFeeds">Feeds</button>
-<button id="btnFeedback">FeedBack</button>
-<button id="btnLogin" >Log In</button>
+    <script src="script.js"></script>
+
+<style>
+    label.error { float: none; color: red; padding-left: .5em; padding-top: .5em; margin-left:.5em; margin-right:.5em; vertical-align: top; border-top: 1px solid #e1e1e1;}
+</style>
+<?php      
+    require 'dbconx.php';   
+  
+?>
+   
+<body>
+      
+<div class="form">  
+
+    <div data-role="page" id="home">
+
+    <div data-role="header" role="banner">
+        <p>Create Account</p>
+    </div>
+
+    <div data-role="main" id="content">
+    <form id="register" action='reg.php' method="post" accept-charset='UTF-8' data-ajax="false">
+    
+        <fieldset >
+            <legend>Register</legend>
+            <input type='hidden' class="newUserInput" name='submitted' id='submitted' value='1'/>
+            
+            <p>
+                <label for='name' >First Name: </label>
+                <input type='text' class="newUserInput" name='firstName' id='firstName'/>
+            </p>
+
+            <p>
+                <label for='name' >Last Name: </label> 
+                <input type='text' class="newUserInput" name='lastName' id='lastName'/>
+            </p>
+
+            <p>
+                <label for='email' >Email Address:</label>
+                <input type='text' class="newUserInput" name='email' id='email'/>
+            </p>
+
+            <p>
+                <label for='password' >Password:</label>
+                <input type='password' class="newUserInput" name='password' id='password'/>
+            </p>
+
+            <p>
+                <label for='password' >Confirm Password:</label>
+                <input type='password' class="newUserInput" name='confirm' id='confirm'/>
+            </p>
+
+            <br> <br>
+            <input type='submit' name='register' value='Register'/>
+            <p class="message">Already registered? <a id="login.php">Login here.</a></p>
+        </fieldset>
+
+    </form>
+    </div>
+	
+
+	<div data-role="footer" id="footer">
+        <button id="btnFeeds">Feeds</button>
+        <button id="btnFeedback">FeedBack</button>
+        <button id="btnLogin" >Log In</button>
      </div>
+
 	 </div>
 </div>  
-    </body>
-	</html>
+<?php
+$con->close();
+?>
+</body>
+</html>
