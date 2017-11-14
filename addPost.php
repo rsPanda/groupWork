@@ -10,35 +10,24 @@
 <script src="redirect.js"></script>
 </head>
 <body>
-<div data-role="page" id="home">
-<div data-role="header" role="banner">
-<p>Post</p>
-</div>
-<table>
-<tr>	<th>title</th>	<th>console</th>	<th>genre</th>	</tr>
-<tr>	<td><input type="text" id="title"></input></td>	<td><input type="text" id="console"></input></td>	<td><input type="text" id="genre"></input></td>	</tr>
-</table>
-<div data-role="main" id="content">
-<!-- this should be loading the post data into the text area -->
-<textarea rows="27" cols="135">
+ 
+    <form id="add">
 
-</textarea>
-<br/>
-<button id="btnAddPost">Add Post</button>
-<br/>
-</div>
-<div data-role="footer">
-<button id="btnFeeds">Feeds</button>
-<button id="btnFeedback">FeedBack</button>
-<button id="btnLogout">Log Out</button>
-<br/>
-<button id="btnPosts">Add Posts</button>
-<button id="btnRemovePost">Remove Post</button>
-<button id="btnRemoveConsole">Remove Console</button>
-<br/>
-<p>&copy; GamesHub</p>
-<p>&copy; Christopher Sanderson</p>
-</div>
-</div>
+    <fieldset>
+        <legend>Add Post</legend>
+       
+        
+        <label for='articleDesc'>Description of article</label>
+        <input type='text' name='articleDesc' id='articleDesc' maxlength="50" required />
+        
+        <label for='articleLink'>Article Link: </label>  
+        <input type='text' name='articleLink' id='articleLink' maxlength="50" required/>
+          
+    <br>
+        <button id="addPostBTN">Add Game</button>
+
+    </fieldset>
+</form>
+ 
 </body>
 </html>
