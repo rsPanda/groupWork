@@ -1,13 +1,29 @@
 <!DOCTYPE HTML>
 <HTML>
 <head>
-    <title> New user</title>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-	<script src="redirect.js">
-</script>
+ <title>Register</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Include the CSS file-->
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!--Include the Bootstrap stylesheets-->  
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+  <!--Icon Pack-->
+    <link rel="stylesheet"  href="dist/jqm-icon-pack-fa.css" />
+
+
+  <!-- Include the jQuery library -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!--Include the bootstrap JS library-->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  
+
 <script>
 <?php 
 if(isset($_POST['username'], $_POST['password'], $_POST['name'], $_POST['email'])) {
@@ -38,49 +54,45 @@ if(isset($_POST['username'], $_POST['password'], $_POST['name'], $_POST['email']
     
 ?>
 </script>
-    
-    <body>
-      
-       <div class="form">  
+</head>    
+    <body> 
 	   <div data-role="page" id="home">
-	   <div data-role="header" role="banner">
-		  <p>Create Account</p>
-	   </div>
+	   <div data-role="header" id="header">      
+      GAME HUB
+        <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+           <a href="main.php" data-transition="slideup" class="ui-btn ui-icon-home ui-btn-icon-notext ui-btn-inline ui-corner-all">Home</a>
+        </div>
+    </div>
 
-<div data-role="main" id="content">
+<div data-role="main" class= "loginContent">
 <form id="register" action='reg.php' method="post"
     accept-charset='UTF-8'>
     
 <fieldset >
-    <legend>Register</legend>
+    <div class="form-top">
+          REGISTER
+        </div>
+        <div class="form-bottom">
     <input type='hidden' name='submitted' id='submitted' value='1'/>
 
-    <label for='name' >Your Full Name: </label>  <br>  
+    <label for='name' >Your Full Name: </label> 
     <input type='text' name='name' id='name' maxlength="50" required/>
-<br>
-    <label for='email' >Email Address:</label><br>
-    <input type='text' name='email' id='email' maxlength="50" required />
-<br>
-    <label for='username' >UserName:</label><br>
-    <input type='text' name='username' id='username' maxlength="50" required />
-<br>
-    <label for='password' >Password:</label><br>
-    <input type='password' name='password' id='password' maxlength="50" required />
-<br> <br>
-    <input type='submit' name='register' value='Register'/>
-    <p class="message">Already registered? <a id="log">Login here.</a></p>
 
+    <label for='email' >Email Address:</label>
+    <input type='text' name='email' id='email' maxlength="50" required />
+
+    <label for='username' >UserName:</label>
+    <input type='text' name='username' id='username' maxlength="50" required />
+
+    <label for='password' >Password:</label>
+    <input type='password' name='password' id='password' maxlength="50" required />
+
+    <p><button id="loginBTN">Register</button></p>
+    <p class="message">Already registered? <a href="login.php">Login here.</a></p>
+  </div>
 </fieldset>
 </form>
-	</div>
-	<!-- Chris has added in the button links -->
-	<div data-role="footer" id="footer">
-	<script src="redirect.js"></script>
-<button id="btnFeeds">Feeds</button>
-<button id="btnFeedback">FeedBack</button>
-<button id="btnLogin" >Log In</button>
-     </div>
-	 </div>
+	</div>	
 </div>  
     </body>
 	</html>
