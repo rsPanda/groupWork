@@ -10,7 +10,10 @@
 <script src="redirect.js"></script>
 </head>
 <body>
- 
+ <?php
+ require 'dbconx.php'
+  $con=db();
+  ?>
    <div class="form">  
     <form id="edit" action="editContent.php" method="Get">
 
@@ -41,6 +44,7 @@
 </form>
 </div>
         
-
+<?php
+ $con->close();
 </body>
 </html>
