@@ -46,5 +46,6 @@
         
 <?php
  $con->close();
+?>
 </body>
 </html>
