@@ -15,10 +15,10 @@
 			top: 0;
 		}
 
-		.mainDiv{
+		/*.mainDiv{
 			position: relative;
 			margin-bottom: 30px;
-		}
+		}*/
 
 		#footer{
 			text-align: center;
@@ -30,25 +30,49 @@
 			bottom: 0;
 		}
 
-		#header-nav{
-			width: 25px;
-			margin: 0px auto;
-			float: none;
-			position: relative;
-			text-align: left;
-		}
+    #newSearchBar{
+      /*background-color: white;*/
+      margin: 2% 5% 0% 5%;
+      border-bottom: 1px solid #ddd;
+    }
 
-		#bottomButton{
-			width: 250px;
-		}
+    .block{
+      margin: 4% 8% 10% 8%;
+      background-color: white;
+      padding: 4%;
+    }
 
-		#search-2{
-			width: 50em;
-		}
+    .img-circle{
+      width: 30%;
+      height: 30%;
+      /*border-radius: 50%;*/
+      display: block;
+      margin: auto;
+    }
 
+    b{
+      color: grey;
+    }
+
+    .profileContent{
+      width: 80%;
+      display: block;
+      margin: auto;
+      background-color:white;
+      line-height: 150%;
+      font-family: sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .mainContent{
+        margin: 0% 4% 20% 4%;
+        background-color: #123456;
+        border-radius: 4px;
+    }
 
 		.loginContent{
-			margin:4% 10% 10% 10%;
+			margin:4% 10% 20% 10%;
 			/*margin-bottom: 10%;*/
 			/*background-color:white ;*/
 		}
@@ -81,10 +105,11 @@
           opacity: 1;  
         }
 
-    #okayButton{
+    #okayButton, #addGameBTN{
       background-color: #2a9670;
           color: white;
-          width: 35%;
+          width: 38%;
+          height: 1%;
           left: 10%;
           right: 10%;
           opacity: 1; 
@@ -92,12 +117,19 @@
           margin-right: 3%;
     }
 
+   /* button{
+      display: block;
+      margin: auto;
+      width: 40%;
+    }*/
+
      #cancelButton{
       background-color: #c91b04;
       /*#d31f2e;*/
           color: white;
-          width: 35%;
-          left: 10%;
+          width: 38%;
+          height: 10%;
+          left: 5%;
           right: 10%;
           opacity: 1; 
           display: inline-block;
@@ -113,7 +145,7 @@
           margin-top: 5px;
           padding:12px;
           padding-bottom: 5px;
-          width:95%;
+          width:100%;
           background:#fff;
           border:1px solid #ddd;
           border-radius: 5px;

@@ -25,6 +25,7 @@
 
 </head>
 <body>
+	<body>
     <div data-role="pages" id="container">
         <!--Header-->
     <div data-role="header" id="header">        
@@ -39,55 +40,70 @@
         </div>
         </div>
     </div>
- 
-        <div data-role="main" class="loginContent">
-    <form id="edit" action="editContent.php" method="Get">
 
-    <fieldset >
-        <div class="form-top">
-          Edit Post
+ 	<div data-role="main" class="loginContent">
+    <form id="add">
+
+    <fieldset>
+         <div class="form-top">
+          Add Game
         </div>  
-        <div class="form-bottom">   
-        <input type="hidden" id="gameID" value="<?php echo $row['gameID']; ?>" />
-
-        <select name="game" id="game">
-            <option>Select Game...</option>
-            <option value="">Game 1</option>
-            <option value=""> Game 2</option>
-            <option value=""> Game 3</option>
-            <option value=""> Game 4</option>
-        </select>
-
-        <label>Post Title</label>
-            <input type="text" name="title" id="title" placeholder="Post Title Here">
-
-        <label>Contents</label> 
-            <textarea id="contents" name="contents" placeholder="Post Contents Here"></textarea>
-
-        <label>Link</label>
-            <input type="url" name="postLink" placeholder="Post Link Here">
-            
+        <div class="form-bottom">  
         
-        <!-- <label for="gameName">Game name: </label> 
-        <input type="text" name="gameName" value="<?php echo $row['gameName'] ?>" /> 
+        <label for='gameName'>Name of Game:</label>
+        <input type='text' name='gameName' id='gameName' maxlength="50" required />
         
-
         <label for='gameDesc'>Game Description: </label>  
-        <input type="text" name="gameDesc" value="<?php echo $row['gameDesc'] ?>"/>
+        <textarea name="gameDesc" id="gameDesc" required="true" maxlength="200"></textarea>
 
-        <label for='genreName'>Genre:</label>
-        <input type="text" name="genreName" value="<?php echo $row['genreName'] ?>"/>
-        
+        <?php 
+        require "dbconx.php";
+        $con = db();
+        $genreSelect="SELECT genreName AS 'Genre' FROM gamegenre";
 
-        <label for='consoleName'>Console: </label>
-        <input type="text" name="consoleName" value="<?php echo $row['consoleName'] ?>"/> -->
-        <button id="okayButton">Update</button><button id="cancelButton" data-role="back">Cancel</button>
-   </div>
+	$result = $con->query($genreSelect);
+
+	echo "<div id='genreSelect'>";
+	if ($result-> num_rows > 0) {
+		
+		echo "<select name='newGenre' id='newGenre' required><option selected disabled>Select Genre...</option>";
+		while($row = $result->fetch_assoc()) {
+		echo "<option '".$row['Genre']."'>".$row['Genre']."</option> ";
+
+		}
+		echo "</select>";
+	}else{
+		echo "there is nothing here";
+	}
+	
+?>
+       <?php	
+		
+	$consoleSelect="SELECT consoleName AS 'Console' FROM console";
+
+	$result = $con->query($consoleSelect);
+
+	echo "<div id='consoleSelect'>";
+	if ($result-> num_rows > 0) {
+		
+		echo "<select name ='newConsole' id='newConsole' required><option selected disabled>Select Console...</option>";
+		while($row = $result->fetch_assoc()) {
+			echo "<option '".$row['Console']."'>".$row['Console']."</option> ";
+		}
+		echo "</select>";
+	}else{
+		echo "there is nothing here";
+	}
+	
+?>
+		<input type="file" name="gameArt" placeholder="Choose the game art..">
+        <button id="addGameBTN">Add</button><button id="cancelButton" data-role="back">Cancel</button>
+
     </fieldset>
 </form>
 </div>
 
-      <div data-role="footer" id="footer">
+<div data-role="footer" id="footer">
             <!-- Copyright <i class="fa fa-copyright" aria-hidden="true"></i>  Gamehub 2017 -->
             <div data-role="navbar"  data-position="fixed">
             <!--If ADMIN-->

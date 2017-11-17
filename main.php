@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	
-		<div data-role="main" class="ui-content">
+		<div data-role="main" class="ui-content" id="mainDiv">
 			<!--Top Header Menu-->
 			<div>
 			    <span><input type="search" name="search-2" id="search-2" value="" /></span>
@@ -123,6 +123,7 @@
 			<!--If ADMIN-->
 			<ul>
 				<li><a href="posts.html" id="post" data-icon="file">Posts</a></li>
+				<li><a href="posts.html" id="post" data-icon="gamepad">Games</a></li>
 				<li><a href="admins.html" id="arrow-up" data-icon="user">Admins</a></li>
 				<li><a href="feedback.html" id="arrow-up" data-icon="smile-o">Profile</a></li>
 			</ul>
