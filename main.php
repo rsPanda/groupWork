@@ -62,18 +62,20 @@
 		      </div>
 		      
 		      <div class="articleDescription">
-		          Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on November 4, 2016.
-		         Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows... See More
-		        
+		         <p> Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on November 4, 2016.
+		         Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows... 
+                </p>
+		        <p class="read-more"><a href="#" class="button">Read More</a></p>
 		      </div>
-
 
 		      <div class="articleButtons">
 		        <ul>
-		          <li class="favorite">
-		            <a href="#"><i class="fa fa-heart-o"></i></a>
-		          </li>
-		          <li class="edit">
+		           <!-- <li class="favorite">
+		            <a href="#" style="width: 100%;"><i class="fa fa-heart-o"></i></a>
+		          </li> -->
+
+
+		          <li class="edit"><!--if admin following two buttons only-->
 		            <a href="#"><i class="fa fa-pencil-square-o"></i></a>
 		          </li>
 		          <li class="cross">
@@ -93,18 +95,21 @@
 		      </div>
 		      
 		      <div class="articleDescription">
-		          Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on November 4, 2016.
-		         Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows... See More
-		        
+		         <p> Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on November 4, 2016.
+		         Call of Duty: Infinite Warfare is a first-person shooter video game developed by Infinity Ward and published by Activision. It is the thirteenth primary installment in the Call of Duty series and was released worldwide for Microsoft Windows... 
+                </p>
+		        <p class="read-more"><a href="#" class="button">Read More</a></p>
 		      </div>
 
 
 		      <div class="articleButtons">
-		        <ul>
-		          <li class="favorite">
-		            <a href="#"><i class="fa fa-heart-o"></i></a>
-		          </li>
-		          <li class="edit">
+		        <ul><!--if user then the following button only-->
+		          <!-- <li class="favorite">
+		            <a href="#" style="width: 100%;"><i class="fa fa-heart-o"></i></a>
+		          </li> -->
+
+
+		          <li class="edit"><!--if admin following two buttons only-->
 		            <a href="#"><i class="fa fa-pencil-square-o"></i></a>
 		          </li>
 		          <li class="cross">
@@ -122,21 +127,59 @@
 			<div data-role="navbar"  data-position="fixed">
 			<!--If ADMIN-->
 			<ul>
-				<li><a href="posts.html" id="post" data-icon="file">Posts</a></li>
-				<li><a href="posts.html" id="post" data-icon="gamepad">Games</a></li>
-				<li><a href="admins.html" id="arrow-up" data-icon="user">Admins</a></li>
-				<li><a href="feedback.html" id="arrow-up" data-icon="smile-o">Profile</a></li>
+				<li><a href="addPost.php" id="post" data-icon="file">Posts</a></li>
+				<li><a href="gameList.php" id="post" data-icon="gamepad">Games</a></li>
+				        <li><a href="main.php" id="post" data-icon="home">Home</a></li>
+
+				<li><a href="userList.php" id="arrow-up" data-icon="user">Admins</a></li>
+				<li><a href="profile.php" id="arrow-up" data-icon="smile-o">Profile</a></li>
 			</ul>
 
 			<!--If GENERAL USER-->		
 			<!-- <ul>
-				<li><a href="posts.html" id="post" data-icon="file">Favorites</a></li>
-				<li><a href="admins.html" id="arrow-up" data-icon="home">Home</a></li>
-				<li><a href="feedback.html" id="arrow-up" data-icon="smile-o">Profile</a></li>
+				<li><a href="favorites.php" id="post" data-icon="file">Favorites</a></li>
+				<li><a href="main.php" id="arrow-up" data-icon="home">Home</a></li>
+				<li><a href="profile.php" id="arrow-up" data-icon="smile-o">Profile</a></li>
 			</ul> -->
 		</div>
 		</div>
 
 	</div>
+
+	<script>
+    var $el, $ps, $up, totalHeight;
+
+$(".articleDescription .button").click(function() {
+      
+  totalHeight =0
+
+  $el = $(this);
+  $p  = $el.parent();
+  $up = $p.parent();
+  $ps = $up.find("p:not('.read-more')");
+  
+  // measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+  $ps.each(function() {
+    totalHeight += $(this).outerHeight();
+  });
+        
+  $up
+    .css({
+      // Set height to prevent instant jumpdown when max height is removed
+      "height": $up.height(),
+      "max-height": 9999
+    })
+    .animate({
+      "height": totalHeight
+    });
+    // fade out read-more
+  $p.fadeOut();
+  
+  // prevent jump-down
+  return false;
+    
+});
+  </script>
+
 </body>		
 </html>
