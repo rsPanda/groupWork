@@ -30,7 +30,7 @@
            <a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-icon-user ui-btn-icon-notext ui-btn-inline ui-corner-all">My Profile</a>
            <div data-role="popup" id="popupMenu">
               <ul data-role="listview" data-inset="true">
-                  <li><a href="#">My Profile</a></li>
+                  <li><a href="profile.php">My Profile</a></li>
             <li><a href="#">Logout</a></li>
               </ul>
           </div>
@@ -44,9 +44,9 @@
         <div class="profileContent">
            <b>Name: </b> Ruby Shakya <br>
            <b>Username: </b> ruby </br>
-           <b> Email : </b> rubysky24@gmail.com</br>
+           <b> Email:</b> rubysky24@gmail.com</br>
         </div>
-        <button style="width: 60%; display: block; margin:0px auto; background-color: #2a9670; color: white;"><i class="fa fa-pencil-square-o">&nbsp;Edit</i></button>
+        <button style="width: 60%; display: block; margin:0px auto;margin-top: 8px; background-color: #2a9670; color: white;"><i class="fa fa-pencil-square-o">&nbsp;Edit</i></button>
         <button style="width: 60%; display: block; margin:0px auto; margin-top: 8px; background-color:   #c91b04; color: white;"><i class="fa fa-sign-out"> Logout</i></button>
     </div>
   </div>
@@ -56,16 +56,19 @@
       <div data-role="navbar"  data-position="fixed">
       <!--If ADMIN-->
       <ul>
-        <li><a href="posts.html" id="post" data-icon="file">Posts</a></li>
-        <li><a href="posts.html" id="post" data-icon="gamepad">Games</a></li>
-        <li><a href="admins.html" id="arrow-up" data-icon="user">Admins</a></li>
-        <li><a href="feedback.html" id="arrow-up" data-icon="smile-o">Profile</a></li>
+        <li><a href="addPost.php" id="post" data-icon="file">Posts</a></li>
+        <li><a href="gameList.php" id="post" data-icon="gamepad">Games</a></li>
+                <li><a href="main.php" id="post" data-icon="home">Home</a></li>
+
+        <li><a href="userList.php" id="arrow-up" data-icon="user">Admins</a></li>
+        <li><a href="profile.php" id="arrow-up" data-icon="smile-o">Profile</a></li>
       </ul>
+
       <!--If GENERAL USER-->    
       <!-- <ul>
-        <li><a href="posts.html" id="post" data-icon="file">Favorites</a></li>
-        <li><a href="admins.html" id="arrow-up" data-icon="home">Home</a></li>
-        <li><a href="feedback.html" id="arrow-up" data-icon="smile-o">Profile</a></li>
+        <li><a href="favorites.php" id="post" data-icon="file">Favorites</a></li>
+        <li><a href="main.php" id="arrow-up" data-icon="home">Home</a></li>
+        <li><a href="profile.php" id="arrow-up" data-icon="smile-o">Profile</a></li>
       </ul> -->
     </div>
     </div>

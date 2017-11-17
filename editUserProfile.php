@@ -89,17 +89,21 @@
       <div data-role="navbar"  data-position="fixed">
       <!--If ADMIN-->
       <ul>
-        <li><a href="posts.html" id="post" data-icon="file">Posts</a></li>
-        <li><a href="posts.html" id="post" data-icon="gamepad">Games</a></li>
-        <li><a href="admins.html" id="arrow-up" data-icon="user">Admins</a></li>
-        <li><a href="feedback.html" id="arrow-up" data-icon="smile-o">Profile</a></li>
+        <li><a href="addPost.php" id="post" data-icon="file">Posts</a></li>
+        <li><a href="gameList.php" id="post" data-icon="gamepad">Games</a></li>
+                <li><a href="main.php" id="post" data-icon="home">Home</a></li>
+
+        <li><a href="userList.php" id="arrow-up" data-icon="user">Admins</a></li>
+        <li><a href="profile.php" id="arrow-up" data-icon="smile-o">Profile</a></li>
       </ul>
+
       <!--If GENERAL USER-->    
       <!-- <ul>
-        <li><a href="posts.html" id="post" data-icon="file">Favorites</a></li>
-        <li><a href="admins.html" id="arrow-up" data-icon="home">Home</a></li>
-        <li><a href="feedback.html" id="arrow-up" data-icon="smile-o">Profile</a></li>
+        <li><a href="favorites.php" id="post" data-icon="file">Favorites</a></li>
+        <li><a href="main.php" id="arrow-up" data-icon="home">Home</a></li>
+        <li><a href="profile.php" id="arrow-up" data-icon="smile-o">Profile</a></li>
       </ul> -->
+      
     </div>
     </div>
 

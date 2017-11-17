@@ -1,0 +1,95 @@
+body{
+			background-color: #e6e6e6;
+		}
+		#header{
+			background-color: #3595a0;
+			color: white;
+			text-align: center;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			font-size: 15;
+			height: 40px;
+			line-height: 40px;
+/*			position: fixed;
+*/			width: 100%;
+			top: 0;
+		}
+
+		#footer{
+			text-align: center;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			font-size: 13;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+		}
+
+    #new{
+      /*background-color: white;*/
+      margin: 2% 5% 0% 5%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .mainContent{
+        margin: 2% 4% 20% 4%;
+        background-color: #123456;
+        border-radius: 4px;
+    }
+
+    .container{
+    	margin-right: 5px;
+        margin-top: 5px;
+        padding:12px;
+        padding-bottom: 5px;
+    	margin: 5px;
+        background:#fff;
+        border:1px solid #ddd;
+        border-radius: 5px;
+        position:relative;
+        float:left;
+
+    }
+
+    .titleName{
+          width:100%;
+          font-size:20px;
+          font-family: Roboto, 'Droid Sans', Helvetica, sans-serif;
+          position: relative;
+          float: left;
+          letter-spacing: 0.8px;
+          word-spacing: 2px;
+          color: #333;
+          font-weight:bold;
+          word-wrap: break-word;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        .articleImage{
+          width:23%;
+          height:35%;
+          float:left;
+          position:relative;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+        }
+        .articleImage img{
+          width:100%;
+          height:100%;
+          position: relative;
+          float: left;
+          border-radius: 5px;
+        }
+        .articleDescription{
+          width:75%;
+          max-height:20%;
+          position: relative;
+          float: right;
+          font-size: 19px;
+          color: #444;
+          font-weight: normal;
+          letter-spacing: .9px;
+          text-align: justify;
+          overflow: hidden;
+          
+        }
